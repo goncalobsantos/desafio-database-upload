@@ -16,10 +16,10 @@ class Transaction {
   @Column()
   title: string;
 
-  @Column({ type: 'enum', enum: ['income', 'outcome'] })
-  type: string;
-
   @Column()
+  type: 'income' | 'outcome';
+
+  @Column('decimal')
   value: number;
 
   @ManyToOne(() => Category)

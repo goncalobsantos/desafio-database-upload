@@ -19,11 +19,11 @@ class TransactionsRepository extends Repository<Transaction> {
       transaction => transaction.type === 'outcome',
     );
     const income = incomes.reduce(
-      (acc, transaction) => acc + transaction.value,
+      (acc, transaction) => acc + Number(transaction.value),
       0,
     );
     const outcome = outcomes.reduce(
-      (acc, transaction) => acc + transaction.value,
+      (acc, transaction) => acc + Number(transaction.value),
       0,
     );
 
